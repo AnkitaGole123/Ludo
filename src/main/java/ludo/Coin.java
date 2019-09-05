@@ -1,22 +1,22 @@
 package ludo;
 
-public class Coin {
-    int position = -1;
+class Coin {
+    private int position = -1;
 
-    public boolean isAtHome() {
+    boolean isAtHome() {
         return position == -1;
     }
 
-    public void place(int startingPosition) {
+    void place(int startingPosition) {
         position = startingPosition;
     }
 
-    public void moveBy(int numberOnDice) {
+    void moveBy(int numberOnDice) {
         this.position += numberOnDice;
         System.out.println(this.position);
     }
 
-    public int getPosition() {
+    int getPosition() {
         return position;
     }
 }
