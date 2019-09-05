@@ -1,21 +1,14 @@
 package ludo;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Player {
-    private List<Coin> coins = new ArrayList<>();
-    private Color color;
+    private Home home;
     private Dice dice;
     private int numberOfCoinsOut = -1;
 
-    public Player(Color color) {
-        this.color = color;
-        for (int i = 0; i <= 3; i++) {
-            Coin coin = new Coin();
-            this.coins.add(coin);
-        }
+    public Player(Home home) {
+        this.home = home;
         dice = new Dice();
     }
 
@@ -23,23 +16,23 @@ public class Player {
         System.out.println("Which coin do you want to move?");
         Scanner scanner = new Scanner(System.in);
         int coinToMove = scanner.nextInt();
-        coins.get(coinToMove).moveBy(numberOnDice);
+        home.coins.get(coinToMove).moveBy(numberOnDice);
     }
 
     private void moveACoinOut() {
         numberOfCoinsOut++;
-        coins.get(numberOfCoinsOut).place(color.getStartingPosition());
+        home.coins.get(numberOfCoinsOut).place(home.starting);
     }
 
     void play() {
         int numberOnDice = dice.toss();
         int numberOfCoinsAtHome = 0;
-        for (Coin coin : coins) {
+        for (Coin coin : home.coins) {
             if (coin.isAtHome()) {
                 numberOfCoinsAtHome++;
             }
         }
-        System.out.println("Player color "+color);
+        System.out.println("Player color "+home);
         System.out.println("NumberOnDice "+numberOnDice);
         System.out.println("New position "+ new Coin().getPosition());
         System.out.println("numberOfCoinsAtHome "+numberOfCoinsAtHome);
@@ -70,5 +63,6 @@ public class Player {
             Scanner scanner = new Scanner(System.in);
             scanner.nextInt();
         }
+
     }
 }

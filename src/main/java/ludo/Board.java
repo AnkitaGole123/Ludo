@@ -1,5 +1,7 @@
 package ludo;
 
-public class Board {
+import java.util.List;
 
+public class Board {
+List<Home> homes;
 }
