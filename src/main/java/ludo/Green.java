@@ -2,7 +2,7 @@ package ludo;
 
 import java.util.Arrays;
 
-public class Green extends Home{
+public class Green extends Yard {
     public Green() {
         this.coins = Arrays.asList(new Coin(),new Coin(), new Coin(), new Coin());;
         this.color = "Green";

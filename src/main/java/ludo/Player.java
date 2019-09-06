@@ -3,11 +3,11 @@ package ludo;
 import java.util.Scanner;
 
 public class Player {
-    private Home home;
+    private Yard home;
     private Dice dice;
     private int numberOfCoinsOut = -1;
 
-    public Player(Home home) {
+    public Player(Yard home) {
         this.home = home;
         dice = new Dice();
     }
