@@ -1,8 +1,15 @@
 package ludo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Player {
+    static private List<Yard> colors = new ArrayList<>();
+    private int red = 0;
+    private int green = 0;
+    private int blue = 0;
+    private int yellow = 0;
     private Yard home;
     private Dice dice;
     private int numberOfCoinsOut = -1;

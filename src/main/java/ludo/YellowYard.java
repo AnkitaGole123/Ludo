@@ -2,10 +2,10 @@ package ludo;
 
 import java.util.Arrays;
 
-public class Yellow extends Yard {
-    public Yellow() {
+public class YellowYard extends Yard {
+    public YellowYard() {
         this.coins = Arrays.asList(new Coin(),new Coin(), new Coin(), new Coin());;
-        this.color = "Yellow";
+        this.color = "YellowYard";
         this.starting = 26;
         this.ending = 82;
     }

@@ -11,12 +11,13 @@ class Coin {
         position = startingPosition;
     }
 
-    void moveBy(int numberOnDice) {
+    int moveBy(int numberOnDice) {
         this.position += numberOnDice;
-        System.out.println(this.position);
+        return this.position;
     }
 
     int getPosition() {
+
         return position;
     }
 }
